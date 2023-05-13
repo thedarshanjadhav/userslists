@@ -24,7 +24,7 @@ function Users() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            Navbar
+            Users
           </a>
           <button
             className="navbar-toggler"
@@ -39,46 +39,7 @@ function Users() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="/Team">
-                  {" "}
-                  <a className="nav-link active" aria-current="page" href="/">
-                    Home
-                  </a>
-                </Link>
-              </li>
 
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="/"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
             <form className="d-flex" role="search">
               <input
@@ -93,7 +54,7 @@ function Users() {
               <button
                 className="btn btn-outline-success"
                 type="button"
-                // onClick={call}
+              // onClick={call}
               >
                 Search
               </button>
@@ -110,8 +71,9 @@ function Users() {
           {records
             .filter(
               (element) =>
-                element.gender.includes(userInput) ||
-                element.domain.includes(userInput)
+                element.first_name.toLowerCase().includes(userInput.toLowerCase()) ||
+                element.gender.toLowerCase().includes(userInput.toLowerCase()) ||
+                element.domain.toLowerCase().includes(userInput.toLowerCase())
               // element.available.includes(userInput) ||
             )
             .map((element, i) => (
